@@ -1,6 +1,10 @@
 public class R10_SEC00_J {
     public static String getAdminPassword() {
-        return "SuperSecretPassword123"; }
+        throw new SecurityException("Access to sensitive information is denied.");}
     public static void main(String[] args) {
-        System.out.println("Leaked password: " + getAdminPassword());}
+        try {
+            System.out.println(getAdminPassword());
+        } catch (SecurityException e) {
+            System.out.println("Sensitive information was protected.");}
+    }
 }
