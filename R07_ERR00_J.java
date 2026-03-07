@@ -5,7 +5,6 @@ public class R07_ERR00_J {
         try {
             FileInputStream file = new FileInputStream("test.txt");
         } catch (FileNotFoundException e) {
-          
-        }
-        System.out.println("Noncompliant ERR00-J example");}
+            System.out.println("File not found: " + e.getMessage());}
+        System.out.println("Compliant ERR00-J example");}
 }
